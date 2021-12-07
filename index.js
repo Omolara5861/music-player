@@ -9,12 +9,6 @@ function _all(query){
 // - Allow the user to select different sounds.
 let songList = [
 	{
-		thumbnail:"../img/images (2).jpg",
-		audio:"../bells.mp3",
-		songname:"🎄 Jingle all the way! 🔔",
-		artistname:"Scrimba"
-	},
-	{
 		thumbnail:"../img/60596-istock-860567864.jpg",
 		audio:"../We-wish-you-a-merry-christmas.mp3",
 		songname:"⛄ We Wish You a Merry Christmas 🎅",
@@ -45,7 +39,7 @@ let songList = [
 		artistname:"Lesfm",
 	},
 	{
-		thumbnail:"../img/images (1).jpg",
+		thumbnail:"../img/magic.jpg",
 		audio:"../christmas-magic-night-11648.mp3",
 		songname:"⛄ Christmas Magic 🎁",
 		artistname:"Alex MakeMusic",
@@ -199,7 +193,16 @@ volumeMuteIcon.addEventListener('click', () => {
     triggerEvent(volumeController, "input");
 }); 
 
-
+stopSound.addEventListener('click', () => {
+	if(main.audio.paused){
+		main.playPauseControl.classList.remove("paused");
+		main.audio.play();
+		main.audio.currentTime = 0;
+	} else {
+		main.playPauseControl.classList.add("paused");
+		main.audio.pause();
+	}
+});
 
 function triggerEvent(ele, event) {
     ele.dispatchEvent(new Event(event));
