@@ -57,11 +57,12 @@ body {
 }
 .player .main .controls {
 	display: flex;
-	justify-content: center;
-	margin:8px 0px;
+	justify-content: space-between;
+	width: 105px;
+	margin: 8px auto;
 }
 .player .main .controls > div {
-	margin:0px 30px;
+	/* margin:0px 30px; */
 	cursor: pointer;
 }
 .player .main .controls i.fa {
